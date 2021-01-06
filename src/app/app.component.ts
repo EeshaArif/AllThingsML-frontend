@@ -1,5 +1,3 @@
-import { MessageService } from './_services/message.service';
-import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,10 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
-  constructor(private messageService: MessageService) {}
+export class AppComponent {
   title = 'all-things-ml';
-  ngOnInit(): void {
-    this.messageService.getAllMessages();
-  }
 }

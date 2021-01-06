@@ -15,7 +15,7 @@ export class MessageService {
   messages: Observable<Message[]> = this.MessageSubject.asObservable();
 
   constructor(private http: HttpClient) {
-    this.getAllMessages();
+    // this.getAllMessages();
   }
   getAllMessages(): void {
     this.http
@@ -23,7 +23,7 @@ export class MessageService {
       .subscribe((messages: MessageResponse) => {
         this.MessagesStore = messages.message_list;
         this.MessageSubject.next(this.MessagesStore);
-        console.log(messages);
+        console.log(messages.message_list);
       });
   }
 }

@@ -12,9 +12,12 @@ import { HttpErrorInterceptor } from './_helpers/http-error.interceptor';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NavComponent } from './nav/nav.component';
+import { MessageComponent } from './message/message.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, LoadingDialogComponent],
+  declarations: [AppComponent, LoadingDialogComponent, NavComponent, MessageComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

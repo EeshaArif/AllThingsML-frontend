@@ -1,1 +1,7 @@
-<p>message works!</p>
+<p>Messages coming from the php server:</p>
+<ul>
+  <li *ngFor="let message of messageService.messages | async">
+    {{ message.text }}<br />
+    {{ message.owner }}
+  </li>
+</ul>

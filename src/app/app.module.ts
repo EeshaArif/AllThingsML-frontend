@@ -12,12 +12,20 @@ import { HttpErrorInterceptor } from './_helpers/http-error.interceptor';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 import { NavComponent } from './nav/nav.component';
 import { MessageComponent } from './message/message.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, LoadingDialogComponent, NavComponent, MessageComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    LoadingDialogComponent,
+    NavComponent,
+    MessageComponent,
+    HomeComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,6 +34,8 @@ import { HomeComponent } from './home/home.component';
     MatProgressSpinnerModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatToolbarModule,
+    MatButtonModule,
   ],
   providers: [
     LoadingDialogService,

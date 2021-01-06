@@ -15,7 +15,7 @@ export class MessageService {
   messages: Observable<Message[]> = this.MessageSubject.asObservable();
 
   constructor(private http: HttpClient) {
-    // this.getAllMessages();
+    this.getAllMessages();
   }
   getAllMessages(): void {
     this.http

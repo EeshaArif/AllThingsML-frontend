@@ -33,6 +33,9 @@ import { EventsComponent } from './events/events.component';
 import { FeaturedComponent } from './featured/featured.component';
 import { DemoOneComponent } from './demo-one/demo-one.component';
 import { DemoTwoComponent } from './demo-two/demo-two.component';
+import { DatasetsComponent } from './datasets/datasets.component';
+import { OpenedArticleComponent } from './opened-article/opened-article.component';
+import { CommunitiesMessagesComponent } from './communities-messages/communities-messages.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,9 @@ import { DemoTwoComponent } from './demo-two/demo-two.component';
     FeaturedComponent,
     DemoOneComponent,
     DemoTwoComponent,
+    DatasetsComponent,
+    OpenedArticleComponent,
+    CommunitiesMessagesComponent,
   ],
   imports: [
     BrowserModule,

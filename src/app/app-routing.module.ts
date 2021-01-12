@@ -1,3 +1,6 @@
+import { CommunitiesMessagesComponent } from './communities-messages/communities-messages.component';
+import { OpenedArticleComponent } from './opened-article/opened-article.component';
+import { DatasetsComponent } from './datasets/datasets.component';
 import { DemoTwoComponent } from './demo-two/demo-two.component';
 import { DemoOneComponent } from './demo-one/demo-one.component';
 import { FeaturedComponent } from './featured/featured.component';
@@ -58,42 +61,55 @@ const routes: Routes = [
   },
   {
     path: 'articles',
-    component: ArticlesComponent
+    component: ArticlesComponent,
   },
+
+  {
+    path: 'articles/opened/:id',
+    component: OpenedArticleComponent,
+  },
+
   {
     path: 'forums',
-    component: ForumsComponent
+    component: ForumsComponent,
+  },
+  {
+    path: 'datasets',
+    component: DatasetsComponent,
   },
   {
     path: 'communities',
-    component: CommunitiesComponent
+    component: CommunitiesComponent,
+  },
+  {
+    path: 'communities/messages/:topic',
+    component: CommunitiesMessagesComponent,
   },
   {
     path: 'competitions',
-    component: CompetitionsComponent
+    component: CompetitionsComponent,
   },
   {
     path: 'courses',
-    component: CoursesComponent
+    component: CoursesComponent,
   },
   {
     path: 'events',
-    component: EventsComponent
+    component: EventsComponent,
   },
   {
     path: 'featured',
-    component: FeaturedComponent
+    component: FeaturedComponent,
   },
   {
     path: 'demo-one',
-    component: DemoOneComponent
+    component: DemoOneComponent,
   },
   {
     path: 'demo-two',
-    component: DemoTwoComponent
-  }
+    component: DemoTwoComponent,
+  },
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

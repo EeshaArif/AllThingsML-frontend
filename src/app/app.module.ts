@@ -17,6 +17,22 @@ import { MatButtonModule } from '@angular/material/button';
 import { NavComponent } from './nav/nav.component';
 import { MessageComponent } from './message/message.component';
 import { HomeComponent } from './home/home.component';
+import { OurTeamComponent } from './our-team/our-team.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { FaqsComponent } from './faqs/faqs.component';
+import { CommunityGuidelinesComponent } from './community-guidelines/community-guidelines.component';
+import { WorkWithUsComponent } from './work-with-us/work-with-us.component';
+import { HostEventComponent } from './host-event/host-event.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { ForumsComponent } from './forums/forums.component';
+import { CommunitiesComponent } from './communities/communities.component';
+import { CompetitionsComponent } from './competitions/competitions.component';
+import { CoursesComponent } from './courses/courses.component';
+import { EventsComponent } from './events/events.component';
+import { FeaturedComponent } from './featured/featured.component';
+import { DemoOneComponent } from './demo-one/demo-one.component';
+import { DemoTwoComponent } from './demo-two/demo-two.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +41,22 @@ import { HomeComponent } from './home/home.component';
     NavComponent,
     MessageComponent,
     HomeComponent,
+    OurTeamComponent,
+    ContactUsComponent,
+    AboutUsComponent,
+    FaqsComponent,
+    CommunityGuidelinesComponent,
+    WorkWithUsComponent,
+    HostEventComponent,
+    ArticlesComponent,
+    ForumsComponent,
+    CommunitiesComponent,
+    CompetitionsComponent,
+    CoursesComponent,
+    EventsComponent,
+    FeaturedComponent,
+    DemoOneComponent,
+    DemoTwoComponent,
   ],
   imports: [
     BrowserModule,

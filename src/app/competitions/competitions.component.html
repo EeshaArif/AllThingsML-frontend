@@ -1,7 +1,11 @@
-<h2>competitions works!</h2>
-<h3>Just a list of competitions/hackathons going on:</h3>
-<h4>Name of competition</h4>
-<h4>Short Description</h4>
-<h4>prize money</h4><br>
-<h4>Could incorporate sorting</h4>
-<h4>Could make tabs of "ongoing", "Future", "Completed/Finished"</h4>
+<div *ngFor="let competition of competitionService.competitions | async">
+  <p>ID: {{ competition.id }}</p>
+  <p>Name: {{ competition.name }}</p>
+  <p>Description: {{ competition.description }}</p>
+  <p>Start: {{ competition.start_date }} End: {{ competition.end_date }}</p>
+  <img [src]="competition.image" />
+  <p>Prize: PKR {{ competition.prize }}</p>
+  <p>Host: {{ competition.host }}</p>
+  Link To Competition: <a [href]="competition.link">{{ competition.link }}</a
+  ><br /><br />
+</div>

@@ -1,7 +1,7 @@
 export interface Competition {
   id?: number;
   name: string;
-  descriptions: string;
+  description: string;
   start_date: string;
   end_date: string;
   image: string;

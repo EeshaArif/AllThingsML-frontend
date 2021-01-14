@@ -1,3 +1,5 @@
+import { Article } from './../_models/articleModel';
+import { ArticleService } from './../_services/article.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -7,11 +9,20 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./opened-article.component.css'],
 })
 export class OpenedArticleComponent implements OnInit {
-  articleId = '';
-  constructor(private route: ActivatedRoute) {}
+  article?: Article;
+  constructor(
+    private route: ActivatedRoute,
+    public articleService: ArticleService
+  ) {}
 
   ngOnInit(): void {
-    const Id = this.route.snapshot.params.id;
-    this.articleId = Id;
+    this.route.paramMap.subscribe((params) => {
+      const Id = Number(params.get('id'));
+      if (Id != null) {
+        this.articleService.getArticleOfId(Id).subscribe((articles) => {
+          this.article = articles.articles_list[0];
+        });
+      }
+    });
   }
 }

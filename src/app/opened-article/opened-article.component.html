@@ -1,2 +1,11 @@
-<h1>opened-article works!</h1>
-<h3>Opened article # {{ articleId }}</h3>
+<div *ngIf="article !== undefined">
+  <h1>opened-article works!</h1>
+  <h3>Opened article of ID:{{ article.id }}</h3>
+  <h4>Heading: {{ article.heading }}</h4>
+  <h5>Author: {{ article.author }} Created On: {{ article.created_at }}</h5>
+  <p>Description:{{ article.description }}</p>
+  <br />
+  <p>Body: {{ article.body }}</p>
+  <h4>Thumbnail:</h4>
+  <img [src]="article.thumbnail" />
+</div>

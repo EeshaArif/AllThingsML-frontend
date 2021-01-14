@@ -1,5 +1,13 @@
 <h2>articles works!</h2>
-<h3> A list of articles with thumbnail (image) and a small description of each artcle plus the writers name and date of creation of the article</h3>
-<button mat-button color="primary" [routerLink]="['/articles/opened', 1]">article-1</button>
-<button mat-button color="primary" [routerLink]="['/articles/opened', 2]">article-2</button>
-<button mat-button color="primary" [routerLink]="['/articles/opened', 3]">article-3</button>
+<h3>
+  A list of articles with thumbnail (image) and a small description of each
+  artcle plus the writers name and date of creation of the article
+</h3>
+<button
+  *ngFor="let article of articleService.articles | async"
+  mat-button
+  color="primary"
+  [routerLink]="['/articles/opened', article.id]"
+>
+  {{ article.heading }}
+</button>

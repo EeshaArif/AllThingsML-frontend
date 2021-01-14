@@ -10,14 +10,8 @@
 <button
   mat-button
   color="primary"
-  [routerLink]="['/communities/messages', 'TensorFlow']"
+  *ngFor="let community of communityService.communities | async"
+  [routerLink]="['/communities/messages', community.topic]"
 >
-  TensorFlow
-</button>
-<button
-  mat-button
-  color="primary"
-  [routerLink]="['/communities/messages', 'Big Data']"
->
-  Big Data
+  {{ community.topic }}
 </button>

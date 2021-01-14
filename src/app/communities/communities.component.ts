@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommunityService } from '../_services/community.service';
 
 @Component({
   selector: 'app-communities',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommunitiesComponent implements OnInit {
 
-  constructor() { }
+  constructor(public communityService: CommunityService) { }
 
   ngOnInit(): void {
+    this.communityService.getAllCommunities();
   }
 
 }

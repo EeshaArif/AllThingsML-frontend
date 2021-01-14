@@ -9,9 +9,19 @@ import { Observable, Subject } from 'rxjs';
 })
 export class CommunityService {
   BASE_URL = `${environment.apiUrl}/communities.php`;
-  community?: Community;
+  private communityStore: Community[] = [];
+  private communitySubject: Subject<Community[]> = new Subject();
+  communities: Observable<Community[]> = this.communitySubject.asObservable();
 
   constructor(private http: HttpClient) {}
+  getAllCommunities(): void {
+    this.http
+      .get<CommunityResponse>(`${this.BASE_URL}?action=get_communities_list`)
+      .subscribe((communities) => {
+        this.communityStore = communities.communities_list;
+        this.communitySubject.next(this.communityStore);
+      });
+  }
   getCommunityOfTopic(topic: string | null): Observable<CommunityResponse> {
     return this.http.get<CommunityResponse>(
       `${this.BASE_URL}?action=get_community&topic=${topic}`

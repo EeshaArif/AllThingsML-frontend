@@ -1,4 +1,15 @@
-<p>courses works!</p>
-<h3>Something like this</h3>
-<a href="https://www.kaggle.com/learn/overview">https://www.kaggle.com/learn/overview</a>
-<h3>Or a simple list of references to other third party courses should be good enough</h3>
+Something like this:
+<a href="https://www.kaggle.com/learn/overview"
+  >https://www.kaggle.com/learn/overview</a
+>
+
+<ul>
+  <li *ngFor="let course of courseService.courses | async">
+    ID:{{ course.id }}&nbsp;NAME:{{ course.course_name }}&nbsp;RATE:{{
+      course.rating
+    }}&nbsp;INSTRUCTOR:{{ course.instructor }}<br />
+    DESCRIPTION:{{ course.course_description }}<br />
+    <img [src]="course.image" />Link To Course:
+    <a [href]="course.link">{{ course.link }}</a>
+  </li>
+</ul>

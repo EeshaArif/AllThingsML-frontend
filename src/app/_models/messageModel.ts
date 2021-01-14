@@ -1,8 +1,10 @@
 export interface Message {
   id?: number;
-  owner: string;
   text: string;
+  owner: string;
+  created_at: string;
+  c_id: number;
 }
 export interface MessageResponse {
-  message_list: Message[];
+  messages_list: Message[];
 }

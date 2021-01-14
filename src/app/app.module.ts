@@ -11,6 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { LoadingDialogComponent } from './_helpers/loading-dialog/loading-dialog.component';
 import { NavComponent } from './nav/nav.component';
@@ -82,6 +83,7 @@ import { QuestionService } from './_services/question.service';
     MatSnackBarModule,
     MatToolbarModule,
     MatButtonModule,
+    MatExpansionModule,
   ],
   providers: [
     LoadingDialogService,

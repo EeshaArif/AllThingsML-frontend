@@ -1,4 +1,22 @@
-<p>forums works!</p>
-<p>Its basically a place to post questions and anyone can answer, go here for further info</p>
-<a href="https://www.kaggle.com/questions-and-answers">https://www.kaggle.com/questions-and-answers</a>
-<p>PS: We wont be going that deep and detailed, just an idea is fine.</p>
+<a href="https://www.kaggle.com/questions-and-answers"
+  >https://www.kaggle.com/questions-and-answers</a
+>
+<div *ngFor="let question of questionService.questions | async">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title
+        >{{ question.q_id }}:{{ question.question }}
+      </mat-panel-title>
+      <mat-panel-description>
+        asked by: {{ question.asked_by }}&nbsp;&nbsp;{{ question.created_at }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div *ngIf="question.q_id !== undefined">
+      <h5>Answers:</h5>
+      <div *ngFor="let answer of getAnswersOfQuestion(question.q_id)">
+        <p>AnswerId#{{ answer.a_id }}:{{ answer.answer }}</p>
+        <h5>AnsweredBy:{{ answer.answered_by }} On:{{ answer.created_at }}</h5>
+      </div>
+    </div> </mat-expansion-panel
+  ><br />
+</div>

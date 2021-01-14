@@ -1,6 +1,3 @@
-import { LoadingDialogService } from './_helpers/loading-dialog/loading-dialog.service';
-import { LoadingDialogComponent } from './_helpers/loading-dialog/loading-dialog.component';
-import { MessageService } from './_services/message.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -14,6 +11,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+
+import { LoadingDialogComponent } from './_helpers/loading-dialog/loading-dialog.component';
 import { NavComponent } from './nav/nav.component';
 import { MessageComponent } from './message/message.component';
 import { HomeComponent } from './home/home.component';
@@ -36,6 +35,15 @@ import { DemoTwoComponent } from './demo-two/demo-two.component';
 import { DatasetsComponent } from './datasets/datasets.component';
 import { OpenedArticleComponent } from './opened-article/opened-article.component';
 import { CommunitiesMessagesComponent } from './communities-messages/communities-messages.component';
+
+import { LoadingDialogService } from './_helpers/loading-dialog/loading-dialog.service';
+import { MessageService } from './_services/message.service';
+import { AnswerService } from './_services/answer.service';
+import { ArticleService } from './_services/article.service';
+import { CommunityService } from './_services/community.service';
+import { CompetitionService } from './_services/competition.service';
+import { CourseService } from './_services/course.service';
+import { QuestionService } from './_services/question.service';
 
 @NgModule({
   declarations: [
@@ -85,6 +93,12 @@ import { CommunitiesMessagesComponent } from './communities-messages/communities
       multi: true,
     },
     MessageService,
+    AnswerService,
+    ArticleService,
+    CommunityService,
+    CompetitionService,
+    CourseService,
+    QuestionService,
   ],
   bootstrap: [AppComponent],
   entryComponents: [LoadingDialogComponent],

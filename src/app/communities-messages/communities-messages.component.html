@@ -1,2 +1,9 @@
 <p>communities-messages works!</p>
-<p>The messages of community {{topic}}</p>
+<p>The messages of community {{ topic }}</p>
+<ul>
+  <li *ngFor="let message of messageService.messages | async">
+    {{ message.c_id }} {{ message.text }} <br />by {{ message.owner }}<br />{{
+      message.created_at
+    }}
+  </li>
+</ul>

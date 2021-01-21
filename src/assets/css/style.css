@@ -20,7 +20,9 @@ a {
   transition: 0.5s;
 }
 
-a:hover, a:active, a:focus {
+a:hover,
+a:active,
+a:focus {
   color: #0a98c0;
   outline: none;
   text-decoration: none;
@@ -31,7 +33,12 @@ p {
   margin: 0 0 30px 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   margin: 0 0 20px 0;
@@ -217,7 +224,8 @@ h1, h2, h3, h4, h5, h6 {
   /* Deep Drop Down */
 }
 
-.main-nav, .main-nav * {
+.main-nav,
+.main-nav * {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -242,7 +250,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-.main-nav a:hover, .main-nav .active > a, .main-nav li:hover > a {
+.main-nav a:hover,
+.main-nav .active > a,
+.main-nav li:hover > a {
   color: #1bb1dc;
   text-decoration: none;
 }
@@ -280,7 +290,9 @@ h1, h2, h3, h4, h5, h6 {
   color: #065e77;
 }
 
-.main-nav .drop-down ul a:hover, .main-nav .drop-down ul .active > a, .main-nav .drop-down ul li:hover > a {
+.main-nav .drop-down ul a:hover,
+.main-nav .drop-down ul .active > a,
+.main-nav .drop-down ul li:hover > a {
   color: #1bb1dc;
 }
 
@@ -339,7 +351,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-.mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
+.mobile-nav a:hover,
+.mobile-nav .active > a,
+.mobile-nav li:hover > a {
   color: #8dc2fa;
   text-decoration: none;
 }
@@ -469,7 +483,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-#hero .intro-info .btn-get-started, #hero .intro-info .btn-services {
+#hero .intro-info .btn-get-started,
+#hero .intro-info .btn-services {
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
   font-weight: 600;
@@ -484,7 +499,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-#hero .intro-info .btn-get-started:hover, #hero .intro-info .btn-services:hover {
+#hero .intro-info .btn-get-started:hover,
+#hero .intro-info .btn-services:hover {
   background: #0a98c0;
 }
 
@@ -515,7 +531,7 @@ section {
   width: 50%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 960px) {
   .section-header p {
     width: 100%;
   }
@@ -573,7 +589,7 @@ section {
 #about .about-img img {
   width: 100%;
   border: 8px solid #fff;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 #about .about-img img:hover {
@@ -588,9 +604,9 @@ section {
   width: 90%;
   height: 92%;
   z-index: -1;
-  content: '';
+  content: "";
   background-color: #ebf1fa;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 #about .about-img::after {
@@ -600,9 +616,9 @@ section {
   width: 90%;
   height: 92%;
   z-index: -1;
-  content: '';
+  content: "";
   background-color: #ebf1fa;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 /* Services Section
@@ -800,7 +816,8 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-#portfolio #portfolio-flters li:hover, #portfolio #portfolio-flters li.filter-active {
+#portfolio #portfolio-flters li:hover,
+#portfolio #portfolio-flters li.filter-active {
   color: #1bb1dc;
 }
 
@@ -865,7 +882,8 @@ section {
   text-transform: uppercase;
 }
 
-#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-preview, #portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-details {
+#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-preview,
+#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-details {
   display: inline-block;
   line-height: 1;
   text-align: center;
@@ -876,17 +894,30 @@ section {
   margin: 10px 4px 0 4px;
 }
 
-#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-preview i, #portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-details i {
+#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-preview i,
+#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-details i {
   padding-top: 6px;
   font-size: 22px;
   color: #fff;
 }
 
-#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-preview:hover, #portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-details:hover {
+#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-preview:hover,
+#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-details:hover {
   background: #42c3e8;
 }
 
-#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-preview:hover i, #portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-details:hover i {
+#portfolio
+  .portfolio-item
+  .portfolio-wrap
+  .portfolio-info
+  .link-preview:hover
+  i,
+#portfolio
+  .portfolio-item
+  .portfolio-wrap
+  .portfolio-info
+  .link-details:hover
+  i {
   color: #fff;
 }
 
@@ -955,12 +986,15 @@ section {
 }
 
 @media (max-width: 767px) {
-  #testimonials .testimonial-item h3, #testimonials .testimonial-item h4, #testimonials .testimonial-item p {
+  #testimonials .testimonial-item h3,
+  #testimonials .testimonial-item h4,
+  #testimonials .testimonial-item p {
     margin-left: 0;
   }
 }
 
-#testimonials .owl-nav, #testimonials .owl-dots {
+#testimonials .owl-nav,
+#testimonials .owl-dots {
   margin-top: 5px;
   text-align: center;
 }
@@ -1067,7 +1101,8 @@ section {
   opacity: 1;
 }
 
-#clients .owl-nav, #clients .owl-dots {
+#clients .owl-nav,
+#clients .owl-dots {
   margin-top: 5px;
   text-align: center;
 }
@@ -1101,7 +1136,7 @@ section {
   border: 0;
   border-radius: 0px;
   box-shadow: 0 3px 0px 0 rgba(65, 62, 102, 0.08);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   padding: 36px 0;
   position: relative;
 }
@@ -1113,7 +1148,7 @@ section {
 }
 
 #pricing .card:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1316,7 +1351,8 @@ section {
   z-index: 1;
 }
 
-.portfolio-details .portfolio-details-carousel .owl-nav, .portfolio-details .portfolio-details-carousel .owl-dots {
+.portfolio-details .portfolio-details-carousel .owl-nav,
+.portfolio-details .portfolio-details-carousel .owl-dots {
   margin-top: 5px;
   text-align: left;
 }
@@ -1570,14 +1606,16 @@ section {
   animation: animate-loading 1s linear infinite;
 }
 
-#footer .php-email-form input, #footer .php-email-form textarea {
+#footer .php-email-form input,
+#footer .php-email-form textarea {
   border-radius: 0;
   box-shadow: none;
   border: 1px solid #dce1ec;
   font-size: 14px;
 }
 
-#footer .php-email-form input:focus, #footer .php-email-form textarea:focus {
+#footer .php-email-form input:focus,
+#footer .php-email-form textarea:focus {
   border-color: #1bb1dc;
 }
 

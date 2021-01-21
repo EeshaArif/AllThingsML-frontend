@@ -1,13 +1,14 @@
-<h2>articles works!</h2>
-<h3>
-  A list of articles with thumbnail (image) and a small description of each
-  artcle plus the writers name and date of creation of the article
-</h3>
-<button
-  *ngFor="let article of articleService.articles | async"
-  mat-button
-  color="primary"
-  [routerLink]="['/articles/opened', article.id]"
->
-  {{ article.heading }}
-</button>
+<section id="hero" class="clearfix">
+  <h3>
+    A list of articles with thumbnail (image) and a small description of each
+    artcle plus the writers name and date of creation of the article
+  </h3>
+  <button
+    *ngFor="let article of articleService.articles | async"
+    mat-button
+    color="primary"
+    [routerLink]="['/articles/opened', article.id]"
+  >
+    {{ article.heading }}
+  </button>
+</section>

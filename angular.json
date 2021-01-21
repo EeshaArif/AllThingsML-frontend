@@ -29,9 +29,11 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": ["node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"]
           },
           "configurations": {
             "production": {
@@ -126,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "all-things-ml"
+  "defaultProject": "all-things-ml",
+  "cli": {
+    "analytics": "f1c40d4e-48bf-4703-b115-6e34c75d05a4"
+  }
 }

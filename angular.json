@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "all-things-ml"
+  "defaultProject": "all-things-ml",
+  "cli": {
+    "analytics": "b189c19e-0f1a-4cdc-83f7-c23465274fa1"
+  }
 }

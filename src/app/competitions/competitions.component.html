@@ -1,3 +1,4 @@
+<section id="hero" class="clearfix">
 <div *ngFor="let competition of competitionService.competitions | async">
   <p>ID: {{ competition.id }}</p>
   <p>Name: {{ competition.name }}</p>
@@ -9,3 +10,4 @@
   Link To Competition: <a [href]="competition.link">{{ competition.link }}</a
   ><br /><br />
 </div>
+</section>

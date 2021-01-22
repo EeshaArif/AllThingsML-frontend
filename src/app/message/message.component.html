@@ -1,3 +1,4 @@
+<section id="hero" class="clearfix">
 <p>Messages coming from the php server:</p>
 <ul>
   <li *ngFor="let message of messageService.messages | async">
@@ -5,3 +6,4 @@
     {{ message.owner }}
   </li>
 </ul>
+</section>

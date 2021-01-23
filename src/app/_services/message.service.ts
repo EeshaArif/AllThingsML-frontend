@@ -37,4 +37,12 @@ export class MessageService {
         });
     }
   }
+  postMessage(message: Message): void {
+    this.http
+      .post<MessageResponse>(`${this.BASE_URL}`, message)
+      .subscribe((res: MessageResponse) => {
+        this.MessagesStore.push(res.messages_list[0]);
+        this.MessageSubject.next(this.MessagesStore);
+      });
+  }
 }

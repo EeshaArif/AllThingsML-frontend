@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: `http://localhost/ML/src`,
+  apiUrl: `http://localhost/api/src`,
 };
 
 /*

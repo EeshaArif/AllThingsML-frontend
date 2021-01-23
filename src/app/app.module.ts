@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -45,6 +46,7 @@ import { CommunityService } from './_services/community.service';
 import { CompetitionService } from './_services/competition.service';
 import { CourseService } from './_services/course.service';
 import { QuestionService } from './_services/question.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -84,6 +86,8 @@ import { QuestionService } from './_services/question.service';
     MatToolbarModule,
     MatButtonModule,
     MatExpansionModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     LoadingDialogService,
@@ -101,6 +105,7 @@ import { QuestionService } from './_services/question.service';
     CompetitionService,
     CourseService,
     QuestionService,
+    DatePipe,
   ],
   bootstrap: [AppComponent],
   entryComponents: [LoadingDialogComponent],

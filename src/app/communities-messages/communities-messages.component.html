@@ -1,3 +1,4 @@
+<!--
 <section id="hero" class="clearfix">
 <p>communities-messages works!</p>
 <p>The messages of community {{ topic }}</p>
@@ -8,4 +9,68 @@
     }}
   </li>
 </ul>
+</section>
+-->
+
+<section id="testimonials" class="testimonials" style="padding-top: 140px">
+  <div class="container" data-aos="zoom-in">
+    <header class="section-header">
+      <h3>The {{ topic }} Community!!!</h3>
+    </header>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8 testimonials-carousel">
+        <div
+          *ngFor="let message of messageService.messages | async"
+          class="testimonial-item"
+          style="background-color: #f5f8fd; padding: 2%"
+        >
+          <h3>{{ message.owner }}</h3>
+          <h4>{{ message.created_at }}</h4>
+          <p>
+            {{ message.text }}
+          </p>
+        </div>
+      </div>
+      <div style="padding-top: 5%">
+        <h4>Join the conversation!</h4>
+        <form [formGroup]="form">
+          <div>
+            <input
+              [(ngModel)]="message.owner"
+              formControlName="owner"
+              type="text"
+              name="name"
+              class="form-control"
+              id="name"
+              required
+              placeholder="What should we call you?"
+            />
+          </div>
+          <br />
+          <div class="form-group">
+            <textarea
+              [(ngModel)]="message.text"
+              formControlName="text"
+              class="form-control"
+              name="message"
+              rows="3"
+              required
+              placeholder="Conversate with the community here!!"
+            ></textarea>
+          </div>
+          <br />
+
+          <button
+            [disabled]="!form.valid"
+            (click)="post()"
+            mat-button
+            color="primary"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
 </section>

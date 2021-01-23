@@ -3,7 +3,7 @@ export interface Message {
   text: string;
   owner: string;
   created_at: string;
-  c_id: number;
+  c_id?: number;
 }
 export interface MessageResponse {
   messages_list: Message[];

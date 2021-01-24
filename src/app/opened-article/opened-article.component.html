@@ -18,7 +18,7 @@
 <section id="about" class="about" style="padding-top: 120px;">
 
   <div class="container" data-aos="fade-up">
-    <div class="row">
+    <div class="row" *ngIf="article !== undefined">
 
       <div class="col-lg-5 col-md-6">
         <div class="about-img" data-aos="fade-right" data-aos-delay="100">
@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <div class="col-lg-7 col-md-6" *ngIf="article !== undefined">
+      <div class="col-lg-7 col-md-6">
         <div class="about-content" data-aos="fade-left" data-aos-delay="100">
           <h2>{{ article.heading }}</h2>
           <h3>{{ article.description }}</h3>

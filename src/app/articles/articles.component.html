@@ -28,7 +28,7 @@
 
           <div class=" wow bounceInUp" id="post-8723"> 
 
-            <div class="box"  *ngFor="let article of articleService.articles | async">
+            <div class="box" style="width: 200" *ngFor="let article of articleService.articles | async">
 
              
 
@@ -46,10 +46,11 @@
                     <div class="post_content">
 
                       <button
+
+                      style=" background-color: transparent;"
     
                       mat-button
-
-                      background-color="blue"
+                      color="primary"
                       [routerLink]="['/articles/opened', article.id]"
                     >
 

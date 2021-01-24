@@ -27,6 +27,7 @@ export class ForumsComponent implements OnInit {
     if (this.answers != null) {
       answersByQuestion = this.answers.filter((answer) => answer.q_id === id);
     }
+
     return answersByQuestion;
   }
 }

@@ -16,7 +16,7 @@ export class CourseService {
 
   getAllCourses(): void {
     this.http
-      .get<CourseResponse>(`${this.BASE_URL}?action=get_courses_list`)
+      .get<CourseResponse>(`${this.BASE_URL}`)
       .subscribe((courses) => {
         this.courseStore = courses.courses_list;
         this.courseSubject.next(this.courseStore);

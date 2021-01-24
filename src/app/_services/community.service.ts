@@ -16,7 +16,7 @@ export class CommunityService {
   constructor(private http: HttpClient) {}
   getAllCommunities(): void {
     this.http
-      .get<CommunityResponse>(`${this.BASE_URL}?action=get_communities_list`)
+      .get<CommunityResponse>(`${this.BASE_URL}`)
       .subscribe((communities) => {
         this.communityStore = communities.communities_list;
         this.communitySubject.next(this.communityStore);
@@ -24,7 +24,7 @@ export class CommunityService {
   }
   getCommunityOfTopic(topic: string | null): Observable<CommunityResponse> {
     return this.http.get<CommunityResponse>(
-      `${this.BASE_URL}?action=get_community&topic=${topic}`
+      `${this.BASE_URL}?topic=${topic}`
     );
   }
 }

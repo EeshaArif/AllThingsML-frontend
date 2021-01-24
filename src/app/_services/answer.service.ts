@@ -15,7 +15,7 @@ export class AnswerService {
   constructor(private http: HttpClient) {}
   getAllAnswers(): void {
     this.http
-      .get<AnswerResponse>(`${this.BASE_URL}?action=get_answers_list`)
+      .get<AnswerResponse>(`${this.BASE_URL}`)
       .subscribe((answers) => {
         this.answerStore = answers.answers_list;
         this.answerSubject.next(this.answerStore);

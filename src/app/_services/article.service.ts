@@ -16,7 +16,7 @@ export class ArticleService {
   constructor(private http: HttpClient) {}
   getAllArticles(): void {
     this.http
-      .get<ArticleResponse>(`${this.BASE_URL}?action=get_articles_list`)
+      .get<ArticleResponse>(`${this.BASE_URL}`)
       .subscribe((articles) => {
         this.articleStore = articles.articles_list;
         this.articleSubject.next(this.articleStore);
@@ -24,7 +24,7 @@ export class ArticleService {
   }
   getArticleOfId(id: number): Observable<ArticleResponse> {
     return this.http.get<ArticleResponse>(
-      `${this.BASE_URL}?action=get_article&id=${id}`
+      `${this.BASE_URL}?id=${id}`
     );
   }
 }

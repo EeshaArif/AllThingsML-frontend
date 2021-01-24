@@ -21,7 +21,7 @@ export class CompetitionService {
   constructor(private http: HttpClient) {}
   getAllCompetitions(): void {
     this.http
-      .get<CompetitionResponse>(`${this.BASE_URL}?action=get_competitions_list`)
+      .get<CompetitionResponse>(`${this.BASE_URL}`)
       .subscribe((competitions) => {
         this.competitionStore = competitions.competitions_list;
         this.competitionSubject.next(this.competitionStore);

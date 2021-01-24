@@ -17,7 +17,7 @@ export class QuestionService {
 
   getAllQuestions(): void {
     this.http
-      .get<QuestionResponse>(`${this.BASE_URL}?action=get_questions_list`)
+      .get<QuestionResponse>(`${this.BASE_URL}`)
       .subscribe((questions) => {
         this.questionStore = questions.questions_list;
         this.questionSubject.next(this.questionStore);

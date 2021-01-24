@@ -18,7 +18,7 @@ export class MessageService {
   }
   getAllMessages(): void {
     this.http
-      .get<MessageResponse>(`${this.BASE_URL}?action=get_messages_list`)
+      .get<MessageResponse>(`${this.BASE_URL}`)
       .subscribe((messages: MessageResponse) => {
         this.MessagesStore = messages.messages_list;
         this.MessageSubject.next(this.MessagesStore);
@@ -29,7 +29,7 @@ export class MessageService {
     if (communityId !== undefined) {
       this.http
         .get<MessageResponse>(
-          `${this.BASE_URL}?action=get_messages_list&community_id=${communityId}`
+          `${this.BASE_URL}?community_id=${communityId}`
         )
         .subscribe((messages: MessageResponse) => {
           this.MessagesStore = messages.messages_list;

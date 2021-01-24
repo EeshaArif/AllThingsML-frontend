@@ -18,9 +18,83 @@
         <p>Your Article will be Published in just few steps!</p>
       </header>
 
-      <div class="row">
+      <div class="row" >
 
         <div class=" wow bounceInUp" data-aos="zoom-in" data-aos-delay="100">
+
+          
+
+
+
+          <div class=" wow bounceInUp" id="post-8723"> 
+
+            <div class="box" width="300px" *ngFor="let article of articleService.articles | async">
+
+            <!--POST THUMBNAIL START-->
+                    <div class=" wow bounceInUp">
+                         <!--CALL TO POST IMAGE-->
+                                             
+                         <img src="{{article.thumbnail}}" alt="" width="300" height="180" class="img-fluid">
+                        <!-- <img src="/Users/safiurrehman/Desktop/MLthings frontend/AllThingsML-frontend/src/assets/img/Safi.jpeg"  width="300" height="180"  > -->
+
+                                              </div>
+             <!--POST THUMBNAIL END-->
+
+                <!--POST CONTENT START-->
+                    <div class="post_content">
+                      <h4 class="title"><a href="" > {{ article.heading }}</a></h4>
+                        
+                     <!--META INFO START-->   
+                                                    <div class="single_metainfo">
+                          <!--DATE-->
+                          <p class="description" style="text-align: center">{{article.created_at}}</p>
+                            <!--AUTHOR-->
+                            <p class="description" style="text-align: center">{{article.author}}</p>
+                        </div>
+                                                                       
+                    </div>
+                <!--POST CONTENT END-->
+
+                
+            </div>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--           
           <div class="box"  *ngFor="let article of articleService.articles | async">
             <button
     
@@ -32,7 +106,17 @@
         <div class="icon" style="background: #fceef3;"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
             <h4 class="title"><a href="" > {{ article.heading }}</a></h4>
             <p class="description" style="text-align: center">{{article.author}}</p>
-          </button></div>
+          </button></div> -->
+
+
+
+
+
+
+
+
+
+
         </div>
 
     </div>

@@ -61,7 +61,7 @@ export class CoursesComponent implements OnInit {
     dialogConfig.data = {
       form_title: 'Add Course',
     };
-    dialogConfig.width = '40%';
+    // dialogConfig.width = '40%';
     const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe((data: any) => {

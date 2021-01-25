@@ -9,6 +9,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class CourseDialogComponent implements OnInit {
   form: any;
+  title = '';
   course_name = '';
   course_description = '';
   image = '';
@@ -20,10 +21,14 @@ export class CourseDialogComponent implements OnInit {
     private dialogRef: MatDialogRef<CourseDialogComponent>,
     @Inject(MAT_DIALOG_DATA) data: any
   ) {
+    this.title = data.title;
     this.course_name = data.course_name;
     this.course_description = data.course_description;
     this.image = data.image;
-    this.rating = Number(data.rating);
+    if (data.rating !== undefined) {
+      this.rating = data.rating.toString();
+    }
+
     this.instructor = data.instructor;
     this.link = data.link;
   }
@@ -42,7 +47,6 @@ export class CourseDialogComponent implements OnInit {
           const imageN = event.target.result;
           if (imageN !== null) {
             this.image = imageN.toString();
-            console.log(this.image);
           }
         }
       };

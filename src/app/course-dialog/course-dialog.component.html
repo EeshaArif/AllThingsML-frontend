@@ -1,9 +1,10 @@
-<h1 class="mat-typography" mat-dialog-title></h1>
+<h1 class="mat-typography" mat-dialog-title>{{ title }}</h1>
 <mat-dialog-content [formGroup]="form">
   <mat-form-field>
     <mat-label>Course Name:</mat-label>
     <input
       matInput
+      [(ngModel)]="course_name"
       placeholder="Name"
       formControlName="course_name"
       required
@@ -14,6 +15,7 @@
     <mat-label>Course Description:</mat-label>
     <textarea
       matInput
+      [(ngModel)]="course_description"
       placeholder="description"
       formControlName="course_description"
       required
@@ -35,7 +37,7 @@
   <br />
   <mat-form-field>
     <mat-label>Rating:</mat-label>
-    <mat-select formControlName="rating">
+    <mat-select [(ngModel)]="rating" formControlName="rating">
       <mat-option value="1">1</mat-option>
       <mat-option value="2">2</mat-option>
       <mat-option value="3">3</mat-option>
@@ -48,6 +50,7 @@
     <mat-label>Instructor:</mat-label>
     <input
       matInput
+      [(ngModel)]="instructor"
       placeholder="instructor?"
       formControlName="instructor"
       required
@@ -58,6 +61,7 @@
     <mat-label>Link:</mat-label>
     <input
       matInput
+      [(ngModel)]="link"
       placeholder="The link to the competition"
       formControlName="link"
       required
@@ -70,7 +74,7 @@
     class="mat-button mat-primary"
     (click)="save()"
   >
-    Add Course
+    Done
   </button>
 </mat-dialog-actions>
 

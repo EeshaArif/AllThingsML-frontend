@@ -337,7 +337,7 @@ Something like this:
     <!-- Courses Specifications -->
 
     <h2><b>The Courses!!!</b></h2>
-    <button (click)="openDialog()" mat-stroked-button color="primary">
+    <button (click)="openDialog()" mat-raised-button color="primary">
       Add Course
     </button>
 
@@ -365,6 +365,21 @@ Something like this:
         <p>
           <b>Course Link:</b> <a href="{{ course.link }}"> {{ course.link }}</a>
         </p>
+        <button
+          style="margin-right: 5px"
+          (click)="openEditDialog(course)"
+          mat-stroked-button
+          color="primary"
+        >
+          Edit
+        </button>
+        <button
+          (click)="deleteCourse(course.id)"
+          mat-stroked-button
+          color="warn"
+        >
+          Delete
+        </button>
       </div>
     </div>
   </div>

@@ -38,7 +38,7 @@ export class CourseService {
           (obj) => obj.id !== res.courses_list[0].id
         );
         this.courseSubject.next(this.courseStore);
-        this.sb.open('successfully deleted competition!!', 'close', {
+        this.sb.open('successfully deleted course!!', 'close', {
           duration: 2000,
         });
       });
@@ -61,7 +61,6 @@ export class CourseService {
         this.sb.open('successfully updated course!!', 'close', {
           duration: 2000,
         });
-        console.log(res.courses_list);
       });
   }
 }

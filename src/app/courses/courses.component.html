@@ -180,7 +180,7 @@ Something like this:
 
 
 
-  <div class="row feature-item mt-5 pt-5" style="padding-top: 220px;">
+  <div class="row feature-item mt-5 pt-5" style="padding-top: 220px;"  *ngFor="let course of courseService.courses | async">
         <div class="col-lg-6 wow fadeInUp order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
           <img src="assets/img/course-1.jpg" class="img-fluid" alt="">
         </div>
@@ -188,22 +188,22 @@ Something like this:
         <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-right" data-aos-delay="150">
           <h2><b>Data Science Courses</b></h2>
           <p>
-            <b>Course Name:</b> 
+            <b>Course Name: {{ course.course_name }}</b> 
           </p>
 
           <p>
-            <b>Course Description:</b>
+            <b>Course Description: {{ course.course_description }}</b>
           </p>
 
           <p>
-            <b>Course Instructor:</b>
+            <b>Course Instructor: {{ course.instructor }}</b>
             </p>
 
-            <p><b>Course Rating:</b>
+            <p><b>Course Rating: {{ course.rating }}</b>
           </p>
           
           <p>
-            <b>Course Link:</b>
+            <b>Course Link: <a [href]="course.link">{{ course.link }}</a></b>
           </p>
 
          
@@ -212,7 +212,7 @@ Something like this:
       </div>
 
 
-      <div class="row feature-item" style="padding-top: 100px;">
+    <!--  <div class="row feature-item" style="padding-top: 100px;">
         <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
           <img src="assets/img/nlp.jpeg" class="img-fluid" alt="">
         </div>
@@ -266,8 +266,7 @@ Something like this:
           </p>
         </div>
 
-      </div>
-
+      </div> -->
 
       
     </div>

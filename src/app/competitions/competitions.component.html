@@ -1,5 +1,5 @@
 <section class="clearfix" style="padding: 120px;">
-<div *ngFor="let competition of competitionService.competitions | async">
+<div       *ngFor="let competition of competitionService.competitions | async">
   <p>ID: {{ competition.id }}</p>
   <p>Name: {{ competition.name }}</p>
   <p>Description: {{ competition.description }}</p>

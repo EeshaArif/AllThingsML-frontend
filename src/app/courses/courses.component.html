@@ -194,9 +194,7 @@ Something like this:
         <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0" data-aos="fade-left" data-aos-delay="150">
           
           
-        
-
-            <p>
+          <p>
             <b>Course Name:</b> {{ course.course_name }}
           </p>
 
@@ -214,29 +212,90 @@ Something like this:
           <p>
             <b>Course Link:</b> <a href= "{{course.link}}" > {{course.link}}</a>
           </p>
-          <button> Edit </button>
-          <button> Delete </button>
+         
+
+          <!-- <button class="Edit-button" onclick="EditForm()">Edit Form </button> &nbsp; &nbsp;  -->
+          <!-- <button> Delete </button> 
+
+          <div class="form-popup" id="myForm">
+  <form >
+    
+          <label for="course_name">Course Name:</label>
+          <input type="text" id="course_name" placeholder="Enter Course Name" name="course_name"><br><br>
+
+          <label for="course_description">Course Description:</label>
+          <input type="text" id="course_description" placeholder="Enter Course Description" name="course_description"><br><br>
+
+          <label for="course_instructor">Course Instructor:</label>
+          <input type="text" id="course_instructor" placeholder="Enter Course Instructor" name="course_instructor"><br><br>
+
+          <label for="course_rating">Course Rating:</label>
+          <input type="text" id="course_rating" placeholder="Enter Course Rating" name="course_rating"><br><br>
+
+          <label for="course_link">Course Link:</label>
+          <input type="text" id="course_link" placeholder="Enter Course Link" name="course_link"><br><br>
+
+    
+  </form>
+</div>
 
 
-        
+<script>
+function EditForm() {
+  document.getElementById("myForm").style.display =" block";
+}
+
+
+</script> -->
+
           
-        </div>
+
+     </div>
       </div>
+
+<!-- Add Course -->
 <section id="services" class="services section-bg" style="padding-top: 120px;">
-    <div class="container" data-aos="fade-up">
+    <div class="container" data-aos="fade-up;"> 
 
          
-        <h4>You may add course here using the button below!!</h4>
-      
-      <button> Add Course</button>
-    </div>
-  </section>
-            
-    
+        <h4>Wishing to add a course?</h4>
 
+        <form style="display: grid;">
+
+          <label for="course_id">Course ID:</label>
+          <input type="text" id="course_id" placeholder="Enter Course ID" name="course_id"><br><br>
+
+          <label for="course_name">Course Name:</label>
+          <input type="text" id="course_name" placeholder="Enter Course Name" name="course_name"><br><br>
+
+          <label for="course_description">Course Description:</label>
+          <input type="text" id="course_description" placeholder="Enter Course Description" name="course_description"><br><br>
+
+          <label for="course_image">Course Image:</label>
+          <input type="text" id="course_image" placeholder="Enter Course Image" name="course_image"><br><br>
+
+          <label for="course_instructor">Course Instructor:</label>
+          <input type="text" id="course_instructor" placeholder="Enter Course Instructor" name="course_instructor"><br><br>
+
+          <label for="course_rating">Course Rating:</label>
+          <input type="text" id="course_rating" placeholder="Enter Course Rating" name="course_rating"><br><br>
+
+          <label for="course_link">Course Link:</label>
+          <input type="text" id="course_link" placeholder="Enter Course Link" name="course_link"><br><br>
+
+        </form>
+
+        <button type="submit" value="Add Course">Add Course</button>
+
+    
+    
      </div>
    </section>
 
+
+   <!-- End Course</button> -->
+
+   
   
   <!-- ======= Footer ======= -->
  <footer id="footer" class="section-bg">

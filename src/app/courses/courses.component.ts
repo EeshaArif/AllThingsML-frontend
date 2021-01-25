@@ -59,7 +59,7 @@ export class CoursesComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.data = {
-      form_title: 'Add Course',
+      title: 'Add Course',
     };
     // dialogConfig.width = '40%';
     const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig);

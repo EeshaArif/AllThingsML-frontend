@@ -41,4 +41,11 @@ export class QuestionService {
         this.questionSubject.next(this.questionStore);
       });
   }
+  postQuestion(question: Question): void {
+    this.http
+      .post<QuestionResponse>(`${this.BASE_URL}`, question)
+      .subscribe((res) => {
+        this.getAllQuestions();
+      });
+  }
 }

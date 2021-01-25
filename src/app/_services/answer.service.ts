@@ -42,8 +42,7 @@ export class AnswerService {
     this.http
       .post<AnswerResponse>(`${this.BASE_URL}`, answer)
       .subscribe((res) => {
-        this.answerStore.push(res.answers_list[0]);
-        this.answerSubject.next(this.answerStore);
+        this.getAllAnswers();
       });
   }
 }

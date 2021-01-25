@@ -1,4 +1,4 @@
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { Question } from './../_models/questionModel';
 import { AnswerService } from './../_services/answer.service';
 import { QuestionService } from './../_services/question.service';
 import { Component, OnInit } from '@angular/core';
@@ -16,6 +16,11 @@ export class ForumsComponent implements OnInit {
     q_id: 0,
     answer: '',
     answered_by: '',
+    created_at: '',
+  };
+  questionForm: Question = {
+    question: '',
+    asked_by: '',
     created_at: '',
   };
   constructor(
@@ -65,5 +70,13 @@ export class ForumsComponent implements OnInit {
     this.answerForm.answer = '';
     this.answerForm.answered_by = '';
     this.callAnswers();
+  }
+  askQuestion(): void {
+    this.questionForm.created_at =
+      this.datePipe.transform(new Date(), 'yyyy-MM-dd HH:mm:ss')?.toString() ||
+      '';
+    this.questionService.postQuestion(this.questionForm);
+    this.questionForm.question = '';
+    this.questionForm.asked_by = '';
   }
 }

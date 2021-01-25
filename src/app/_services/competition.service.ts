@@ -57,7 +57,7 @@ export class CompetitionService {
       .post<CompetitionResponse>(`${this.BASE_URL}`, competition)
       .subscribe((res) => {
         this.getAllCompetitions();
-        this.sb.open('successfully posted competition!!', 'close', {
+        this.sb.open('Successfully Posted Competition!', 'close', {
           duration: 2000,
         });
       });

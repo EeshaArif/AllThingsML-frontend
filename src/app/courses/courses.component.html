@@ -179,98 +179,63 @@ Something like this:
   </section>
 
 
-
-  <div class="row feature-item mt-5 pt-5" style="padding-top: 220px;"  *ngFor="let course of courseService.courses | async">
-        <div class="col-lg-6 wow fadeInUp order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-          <img src="assets/img/course-1.jpg" class="img-fluid" alt="">
-        </div>
-
-        <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-right" data-aos-delay="150">
-          <h2><b>Data Science Courses</b></h2>
-          <p>
-            <b>Course Name: {{ course.course_name }}</b> 
-          </p>
-
-          <p>
-            <b>Course Description: {{ course.course_description }}</b>
-          </p>
-
-          <p>
-            <b>Course Instructor: {{ course.instructor }}</b>
-            </p>
-
-            <p><b>Course Rating: {{ course.rating }}</b>
-          </p>
-          
-          <p>
-            <b>Course Link: <a [href]="course.link">{{ course.link }}</a></b>
-          </p>
-
-         
-        </div>
-
-      </div>
+<!-- Courses Specifications -->
 
 
-    <!--  <div class="row feature-item" style="padding-top: 100px;">
+
+      <h2><b>Data Science Courses</b></h2>
+      
+
+
+      <div class="row feature-item" style="padding-top: 100px;" *ngFor="let course of courseService.courses | async">
         <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-          <img src="assets/img/nlp.jpeg" class="img-fluid" alt="">
+          <img [src] ="course.image" class="img-fluid" alt=""> 
         </div>
         <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0" data-aos="fade-left" data-aos-delay="150">
-          <h2><b>Natural Language Processing Courses</b></h2>
-          <p>
-            <b>Course Name:</b> 
+          
+          
+        
+
+            <p>
+            <b>Course Name:</b> {{ course.course_name }}
           </p>
 
           <p>
-            <b>Course Description:</b>
+            <b>Course Description:</b> {{ course.course_description}}
           </p>
 
           <p>
-            <b>Course Instructor:</b>
+            <b>Course Instructor:</b> {{ course.instructor}}
             </p>
 
-            <p><b>Course Rating:</b>
+            <p><b>Course Rating:</b> {{course.rating}}
           </p>
           
           <p>
-            <b>Course Link:</b>
+            <b>Course Link:</b> <a href= "{{course.link}}" > {{course.link}}</a>
           </p>
+          <button> Edit </button>
+          <button> Delete </button>
+
+
+        
+          
         </div>
       </div>
+<section id="services" class="services section-bg" style="padding-top: 120px;">
+    <div class="container" data-aos="fade-up">
 
-      <div class="row feature-item mt-5 pt-5" style="padding-top: 100px;">
-        <div class="col-lg-6 wow fadeInUp order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-          <img src="assets/img/ml.jpg" class="img-fluid" alt="">
-        </div>
-
-        <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-right" data-aos-delay="150">
-          <h2><b>Machnine Learning Courses</b></h2>
-          <p>
-            <b>Course Name:</b> 
-          </p>
-
-          <p>
-            <b>Course Description:</b>
-          </p>
-
-          <p>
-            <b>Course Instructor:</b>
-            </p>
-
-            <p><b>Course Rating:</b>
-          </p>
-          
-          <p>
-            <b>Course Link:</b>
-          </p>
-        </div>
-
-      </div> -->
-
+         
+        <h4>You may add course here using the button below!!</h4>
       
+      <button> Add Course</button>
     </div>
-  </section><!-- End Courses Section -->
+  </section>
+            
+    
+
+     </div>
+   </section>
 
   
   <!-- ======= Footer ======= -->

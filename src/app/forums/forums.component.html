@@ -25,20 +25,15 @@
         placeholder="Ask your question here!"
       ></textarea>
     </div>
-
+<br>
     <button
       [disabled]="
         questionForm.question.length < 1 || questionForm.asked_by.length < 1
       "
       (click)="askQuestion()"
-      mat-button
+      mat-stroked-button
       color="primary"
-      style="
-        font-size: 12px;
-        margin-bottom: 5px;
-        margin-top: 5px;
-        color: #413e66;
-      "
+      
     >
       Ask Question
     </button>

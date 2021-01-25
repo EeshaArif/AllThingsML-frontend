@@ -14,12 +14,10 @@ export class AnswerService {
   answers: Observable<Answer[]> = this.answerSubject.asObservable();
   constructor(private http: HttpClient) {}
   getAllAnswers(): void {
-    this.http
-      .get<AnswerResponse>(`${this.BASE_URL}`)
-      .subscribe((answers) => {
-        this.answerStore = answers.answers_list;
-        this.answerSubject.next(this.answerStore);
-      });
+    this.http.get<AnswerResponse>(`${this.BASE_URL}`).subscribe((answers) => {
+      this.answerStore = answers.answers_list;
+      this.answerSubject.next(this.answerStore);
+    });
   }
 
   deleteAnswerWithId(id: number): void {
@@ -37,6 +35,14 @@ export class AnswerService {
         this.answerStore = this.answerStore.filter(
           (obj) => obj.q_id !== res.answers_list[0].a_id
         );
+        this.answerSubject.next(this.answerStore);
+      });
+  }
+  postAnswer(answer: Answer): void {
+    this.http
+      .post<AnswerResponse>(`${this.BASE_URL}`, answer)
+      .subscribe((res) => {
+        this.answerStore.push(res.answers_list[0]);
         this.answerSubject.next(this.answerStore);
       });
   }

@@ -42,18 +42,8 @@
           }}</span
           ><br /><span style="font-size: 12px">{{ question.created_at }}</span
           ><br /><br />
-          <button
-            (click)="answerQuestion(question.q_id)"
-            mat-button
-            style="margin-right: 5px;"
-          >
-            <span style="font-size: 12px; color:#413e66">Answer </span></button
-          >
-          <button
-            (click)="deleteQuestion(question.q_id)"
-            mat-button
-          >
-            <span style="font-size: 12px; color:brown">Delete</span></button
+          <button (click)="deleteQuestion(question.q_id)" mat-button>
+            <span style="font-size: 12px; color: brown">Delete</span></button
           ><i class="ion-android-remove"></i
         ></a>
 
@@ -77,6 +67,44 @@
               >delete</a
             >
           </p>
+          <div>
+            <input
+              [(ngModel)]="answerForm.answered_by"
+              type="text"
+              name="name"
+              class="form-control"
+              required
+              placeholder="What should we call you?"
+            />
+          </div>
+          <br />
+          <div class="form-group">
+            <textarea
+              [(ngModel)]="answerForm.answer"
+              class="form-control"
+              name="answer"
+              rows="3"
+              required
+              placeholder="Know what the answer is? help out the community!"
+            ></textarea>
+          </div>
+
+          <button
+            [disabled]="
+              answerForm.answer.length < 1 || answerForm.answered_by.length < 1
+            "
+            (click)="answerQuestion(question.q_id)"
+            mat-button
+            color="primary"
+            style="
+              font-size: 12px;
+              margin-bottom: 5px;
+              margin-top: 5px;
+              color: #413e66;
+            "
+          >
+            Answer
+          </button>
         </div>
       </li>
     </ul>

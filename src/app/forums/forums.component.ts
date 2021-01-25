@@ -3,6 +3,7 @@ import { AnswerService } from './../_services/answer.service';
 import { QuestionService } from './../_services/question.service';
 import { Component, OnInit } from '@angular/core';
 import { Answer } from '../_models/answerModel';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-forums',
@@ -11,9 +12,16 @@ import { Answer } from '../_models/answerModel';
 })
 export class ForumsComponent implements OnInit {
   answers?: Answer[];
+  answerForm: Answer = {
+    q_id: 0,
+    answer: '',
+    answered_by: '',
+    created_at: '',
+  };
   constructor(
     public questionService: QuestionService,
-    private answerService: AnswerService
+    private answerService: AnswerService,
+    private datePipe: DatePipe
   ) {}
 
   ngOnInit(): void {
@@ -46,5 +54,16 @@ export class ForumsComponent implements OnInit {
       this.callAnswers();
     }
   }
-  answerQuestion(id: number | undefined): void {}
+  answerQuestion(id: number | undefined): void {
+    this.answerForm.created_at =
+      this.datePipe.transform(new Date(), 'yyyy-MM-dd HH:mm:ss')?.toString() ||
+      '';
+    if (id !== undefined) {
+      this.answerForm.q_id = id;
+    }
+    this.answerService.postAnswer(this.answerForm);
+    this.answerForm.answer = '';
+    this.answerForm.answered_by = '';
+    this.callAnswers();
+  }
 }

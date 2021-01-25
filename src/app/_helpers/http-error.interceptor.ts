@@ -3,7 +3,6 @@ import {
   HttpInterceptor,
   HttpHandler,
   HttpRequest,
-  HttpResponse,
   HttpErrorResponse,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -23,7 +22,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    this.loadingDialogService.openDialog();
+   // this.loadingDialogService.openDialog();
     return next
       .handle(request)
 
@@ -48,7 +47,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
           return throwError(errorMessage);
         }),
         finalize(() => {
-          this.loadingDialogService.hideDialog();
+         // this.loadingDialogService.hideDialog();
         })
       );
   }

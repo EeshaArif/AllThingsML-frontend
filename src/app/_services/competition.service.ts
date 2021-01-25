@@ -26,7 +26,9 @@ export class CompetitionService {
       .subscribe((competitions) => {
         this.competitionStore = competitions.competitions_list;
         this.competitionSubject.next(this.competitionStore);
+      
       });
+
   }
 
   deleteCompetitionWithId(cid: number): void {

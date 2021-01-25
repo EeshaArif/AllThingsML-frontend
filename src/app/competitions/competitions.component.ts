@@ -1,6 +1,7 @@
 import { CompetitionService } from './../_services/competition.service';
 import { Component, OnInit } from '@angular/core';
 import { Competition } from '../_models/competitionModel';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-competitions',
@@ -9,7 +10,6 @@ import { Competition } from '../_models/competitionModel';
 })
 export class CompetitionsComponent implements OnInit {
   competitionForm: Competition = {
-  id: 0,
   name: '',
   description: '',
   start_date: '',
@@ -19,7 +19,8 @@ export class CompetitionsComponent implements OnInit {
   host: '',
   link: '',
   }
-  constructor(public competitionService: CompetitionService) {}
+  constructor(public competitionService: CompetitionService,
+    private datePipe: DatePipe) {}
 
   ngOnInit(): void {
     this.competitionService.getAllCompetitions();

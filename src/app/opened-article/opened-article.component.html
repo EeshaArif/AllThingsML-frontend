@@ -12,17 +12,13 @@
 </div>
 </section> -->
 
-
-
 <!-- ======= Opened Article Section ======= -->
-<section id="about" class="about" style="padding-top: 120px;">
-
+<section id="about" class="about" style="padding-top: 120px">
   <div class="container" data-aos="fade-up">
     <div class="row" *ngIf="article !== undefined">
-
       <div class="col-lg-5 col-md-6">
         <div class="about-img" data-aos="fade-right" data-aos-delay="100">
-         <!-- <img [src]="article.thumbnail" alt=""> -->
+          <img [src]="article.thumbnail" alt="" />
         </div>
       </div>
 
@@ -30,18 +26,36 @@
         <div class="about-content" data-aos="fade-left" data-aos-delay="100">
           <h2>{{ article.heading }}</h2>
           <h3>{{ article.description }}</h3>
-          <p  [innerHTML]="article!.body "></p>
-          <p>Aut dolor id. Sint aliquam consequatur ex ex labore. Et quis qui dolor nulla dolores neque. Aspernatur consectetur omnis numquam quaerat. Sed fugiat nisi. Officiis veniam molestiae. Et vel ut quidem alias veritatis repudiandae ut fugit. Est ut eligendi aspernatur nulla voluptates veniam iusto vel quisquam. Fugit ut maxime incidunt accusantium totam repellendus eum error. Et repudiandae eum iste qui et ut ab alias.</p>
+          <p [innerHTML]="article!.body"></p>
+          <p>
+            Aut dolor id. Sint aliquam consequatur ex ex labore. Et quis qui
+            dolor nulla dolores neque. Aspernatur consectetur omnis numquam
+            quaerat. Sed fugiat nisi. Officiis veniam molestiae. Et vel ut
+            quidem alias veritatis repudiandae ut fugit. Est ut eligendi
+            aspernatur nulla voluptates veniam iusto vel quisquam. Fugit ut
+            maxime incidunt accusantium totam repellendus eum error. Et
+            repudiandae eum iste qui et ut ab alias.
+          </p>
           <ul>
-            <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-            <li><i class="ion-android-checkmark-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-            <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+            <li>
+              <i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi
+              ut aliquip ex ea commodo consequat.
+            </li>
+            <li>
+              <i class="ion-android-checkmark-circle"></i> Duis aute irure dolor
+              in reprehenderit in voluptate velit.
+            </li>
+            <li>
+              <i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi
+              ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate trideta storacalaperda mastiro dolore
+              eu fugiat nulla pariatur.
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-
 </section>
 
 <!-- End About Section -->

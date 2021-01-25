@@ -1,5 +1,57 @@
-<section class="clearfix" style="padding: 120px;">
-<div       *ngFor="let competition of competitionService.competitions | async">
+<!--section class="clearfix" style="padding: 120px;"-->
+  <section id="services" class="services section-bg" style="padding-top: 170px;">
+    <div class="container" data-aos="fade-up">
+
+      <header class="section-header">
+        <h3>Competitions</h3>
+        <p>Following is a list of different competitions. Feel free to participate and add any relevant competitions too!</p>
+      </header>
+      <div class="row" >
+
+        <div class=" wow bounceInUp" data-aos="zoom-in" data-aos-delay="100">
+          <div class=" wow bounceInUp" id="post-8723"> 
+
+            <div class="box" style="width: 200" *ngFor="let competition of competitionService.competitions | async">
+            <!--POST THUMBNAIL START-->
+                    <div class=" wow bounceInUp" style="float: left;">
+                         <!--CALL TO POST IMAGE-->   
+                         <img [src]="competition.image" height=100px width= 100px alt="" class="img-fluid" >
+                        </div>
+                        <!--POST THUMBNAIL END-->
+           
+                           <!--POST CONTENT START-->
+                               <div class="post_content">
+           
+                                 <button
+           
+                                 style=" background-color: transparent;"
+               
+                                 mat-button
+                                 color="primary"
+                               >
+                               <a class="title" [href]="competition.link">{{ competition.name }}</a>
+
+                              </button>
+                                  
+                               <!--META INFO START-->   
+                                 <div class="single_metainfo">
+                                    <!--DATE-->
+                                    <p class="description" style="text-align: center">Start: {{ competition.start_date }} End: {{ competition.end_date }}</p>
+                                      <!--AUTHOR-->
+                                    <p class="description" style="text-align: center">Host: {{ competition.host }} Prize: PKR {{ competition.prize }}</p>
+                                  </div>
+                                                                                 
+                              </div>
+                          <!--POST CONTENT END-->
+          
+                        
+                      </div>
+          
+                    </div>
+                    </div>
+      </div>
+    </div>
+<!--div       *ngFor="let competition of competitionService.competitions | async">
   <p>ID: {{ competition.id }}</p>
   <p>Name: {{ competition.name }}</p>
   <p>Description: {{ competition.description }}</p>
@@ -9,5 +61,5 @@
   <p>Host: {{ competition.host }}</p>
   Link To Competition: <a [href]="competition.link">{{ competition.link }}</a
   ><br /><br />
-</div>
+</div-->
 </section>

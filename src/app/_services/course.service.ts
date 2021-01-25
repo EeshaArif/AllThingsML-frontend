@@ -61,6 +61,7 @@ export class CourseService {
         this.sb.open('successfully updated course!!', 'close', {
           duration: 2000,
         });
+        console.log(res.courses_list);
       });
   }
 }

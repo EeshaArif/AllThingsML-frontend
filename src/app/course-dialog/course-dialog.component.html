@@ -1,32 +1,34 @@
-<h1 class="mat-typography" mat-dialog-title>Add Course!</h1>
+<h1 class="mat-typography" mat-dialog-title></h1>
 <mat-dialog-content [formGroup]="form">
-    <mat-form-field>
-        <mat-label>Course Name:</mat-label>
-        <input
-          matInput
-          placeholder="What is the name of the course?"
-          formControlName="course_name"
-          required
-        />
-      </mat-form-field>
-      <br />
+  <mat-form-field>
+    <mat-label>Course Name:</mat-label>
+    <input
+      matInput
+      placeholder="Name"
+      formControlName="course_name"
+      required
+    />
+  </mat-form-field>
+  <br />
   <mat-form-field>
     <mat-label>Course Description:</mat-label>
     <textarea
       matInput
-      placeholder="Enter your course description"
+      placeholder="description"
       formControlName="course_description"
       required
     ></textarea>
   </mat-form-field>
   <br />
-  <mat-form-field>
-    <mat-label>Image:</mat-label>
+
+  Image:
+  <input type="file" (change)="onFileChanged($event)" />
+  <mat-form-field style="display: hidden">
     <input
-    matInput
-      placeholder="Please Enter URL of image"
+      matInput
+      placeholder=""
       formControlName="image"
-      type="file"
+      [(ngModel)]="image"
       required
     />
   </mat-form-field>
@@ -46,7 +48,7 @@
     <mat-label>Instructor:</mat-label>
     <input
       matInput
-      placeholder="Who is the instructor?"
+      placeholder="instructor?"
       formControlName="instructor"
       required
     />
@@ -56,23 +58,21 @@
     <mat-label>Link:</mat-label>
     <input
       matInput
-      placeholder="Please enter the link to the competition"
+      placeholder="The link to the competition"
       formControlName="link"
       required
     />
   </mat-form-field>
-
 </mat-dialog-content>
 <mat-dialog-actions>
   <button
     [disabled]="!form.valid"
-    class="mat-raised-button mat-primary"
+    class="mat-button mat-primary"
     (click)="save()"
   >
     Add Course
   </button>
 </mat-dialog-actions>
-
 
 <!--
 <h1 mat-dialog-title>Add Photo</h1>

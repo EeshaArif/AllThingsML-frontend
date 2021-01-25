@@ -23,19 +23,37 @@ export class CourseDialogComponent implements OnInit {
     this.course_name = data.course_name;
     this.course_description = data.course_description;
     this.image = data.image;
-    this.rating = data.rating;
+    this.rating = Number(data.rating);
     this.instructor = data.instructor;
     this.link = data.link;
   }
   save(): void {
     this.dialogRef.close(this.form.value);
   }
+  onFileChanged(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (event) => {
+        // called once readAsDataURL is completed
+        if (event.target !== null) {
+          const imageN = event.target.result;
+          if (imageN !== null) {
+            this.image = imageN.toString();
+            console.log(this.image);
+          }
+        }
+      };
+    }
+  }
 
   ngOnInit(): void {
     this.form = this.fb.group({
       course_name: [this.course_name, Validators.required],
       course_description: [this.course_description, Validators.required],
-      image: [this.image, Validators.required],
+      image: [this.image],
       rating: [this.rating, Validators.required],
       instructor: [this.instructor, Validators.required],
       link: [

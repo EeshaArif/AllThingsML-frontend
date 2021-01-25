@@ -1,4 +1,3 @@
-import { Course } from './../_models/courseModel';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { CourseService } from './../_services/course.service';
 import { Component, OnInit } from '@angular/core';
@@ -27,14 +26,16 @@ export class CoursesComponent implements OnInit {
     const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe((data: any) => {
-      this.courseService.postCourse({
+      const obj = {
         course_name: data.course_name,
         course_description: data.course_description,
         image: data.image,
-        rating: data.rating,
+        rating: Number(data.rating),
         instructor: data.instructor,
         link: data.link,
-      });
+      };
+
+      this.courseService.postCourse(obj);
     });
   }
 }

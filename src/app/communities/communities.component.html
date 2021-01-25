@@ -1,25 +1,64 @@
-<section id="services" class="services section-bg" style="padding-top: 170px;">
+<!-- ======= Services Section ======= -->
+<section id="services" class="services section-bg" style="padding-top: 170px">
+  <div class="container" data-aos="fade-up">
+    <header class="section-header">
+      <h3>Services</h3>
+      <p>
+        Need a lift ? Learn Data Science to stay one step ahead and improve your
+        career.
+      </p>
+    </header>
 
-  <header class="section-header">
-    <h3>Communities around the world!</h3>
-    <p>Click on any community to see messages from people all around the world!</p>
-  </header>
-  <div class="row">
-    <div class=" wow bounceInUp" data-aos="zoom-in" data-aos-delay="100">
-      <div class=" wow bounceInUp" id="post-8723">
-        <div class="box" style="width: 200" *ngFor="let community of communityService.communities | async">
-          <div class="wow bounceInUp">
-          <button
-          style=" background-color: transparent;"
-          mat-button
+    <div class="row">
+      <div
+        class="col-md-6 col-lg-4 wow"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+        *ngFor="let community of communityService.communities | async"
+      >
+        <div
+          class="box"
           [routerLink]="['/communities/messages', community.topic]"
         >
+          <div class="icon" style="background: #e1eeff">
+            <i class="ion-ios-world-outline" style="color: #2282ff"></i>
+          </div>
+          <h4 class="title">
+            <a style="cursor:pointer">{{ community.topic }}</a>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Services Section -->
 
-          <h4 class="title">{{ community.topic }}</h4>
-
-        </button>
+<section id="services" class="services section-bg" style="padding-top: 170px">
+  <header class="section-header">
+    <h3>Communities around the world!</h3>
+    <p>
+      Click on any community to see messages from people all around the world!
+    </p>
+  </header>
+  <div class="row">
+    <div class="wow bounceInUp" data-aos="zoom-in" data-aos-delay="100">
+      <div class="wow bounceInUp" id="post-8723">
+        <div
+          class="box"
+          style="width: 200"
+          *ngFor="let community of communityService.communities | async"
+        >
+          <div class="wow bounceInUp">
+            <button
+              style="background-color: transparent"
+              mat-button
+              [routerLink]="['/communities/messages', community.topic]"
+            >
+              <h4 class="title">{{ community.topic }}</h4>
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
+</section>

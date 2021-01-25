@@ -51,6 +51,100 @@
                     </div>
       </div>
     </div>
+    <div style="margin-bottom: 5px">
+      <input
+        [(ngModel)]="competitionForm.name"
+        type="text"
+        name="name"
+        class="form-control"
+        required
+        placeholder="Competition name?"
+      />
+    </div>
+
+    <div class="form-group">
+      <textarea
+        [(ngModel)]="competitionForm.description"
+        class="form-control"
+        name="answer"
+        rows="2"
+        required
+        placeholder="Provide a brief description of the competition here."
+      ></textarea>
+    </div>
+    <div style="margin-bottom: 5px">
+      <input
+        [(ngModel)]="competitionForm.start_date"
+        type="text"
+        name="name"
+        class="form-control"
+        required
+        placeholder="Start date?"
+      />
+    </div>
+    <div style="margin-bottom: 5px">
+      <input
+        [(ngModel)]="competitionForm.end_date"
+        type="text"
+        name="name"
+        class="form-control"
+        required
+        placeholder="Ending date?"
+      />
+    </div>
+    <div style="margin-bottom: 5px">
+      <input
+        [(ngModel)]="competitionForm.image"
+        type="text"
+        name="name"
+        class="form-control"
+        required
+        placeholder="Provide a URL for competition image?"
+      />
+    </div>
+    <div style="margin-bottom: 5px">
+      <input
+        [(ngModel)]="competitionForm.prize"
+        type="text"
+        name="name"
+        class="form-control"
+        required
+        placeholder="Prize money?"
+      />
+    </div>
+    <div style="margin-bottom: 5px">
+      <input
+        [(ngModel)]="competitionForm.host"
+        type="text"
+        name="name"
+        class="form-control"
+        required
+        placeholder="Competition hosted by?"
+      />
+    </div>
+    <div style="margin-bottom: 5px">
+      <input
+        [(ngModel)]="competitionForm.link"
+        type="text"
+        name="name"
+        class="form-control"
+        required
+        placeholder="Competition link?"
+      />
+    </div>
+
+<br>
+    <button
+      [disabled]="
+        competitionForm.name.length < 1 || competitionForm.start_date.length < 1 || competitionForm.end_date.length < 1 || competitionForm.image.length < 1 || competitionForm.prize.length < 1 || competitionForm.host.length < 1 || competitionForm.link.length < 1
+      "
+      (click)="addCompetition()"
+      mat-stroked-button
+      color="primary"
+      
+    >
+      Post Competition
+    </button>
 <!--div       *ngFor="let competition of competitionService.competitions | async">
   <p>ID: {{ competition.id }}</p>
   <p>Name: {{ competition.name }}</p>

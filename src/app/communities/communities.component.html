@@ -4,33 +4,19 @@
     <h3>Communities around the world!</h3>
     <p>Click on any community to see messages from people all around the world!</p>
   </header>
-<!--a href="https://www.kaggle.com/discussion"
-  >https://www.kaggle.com/discussion</a-->
   <div class="row">
   <div class="col-md-6 col-lg-4 wow bounceInUp" *ngFor="let community of communityService.communities | async"
   [routerLink]="['/communities/messages', community.topic]" >
   <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-    <div data-aos="zoom-in" data-aos-delay="100" style="background-color: white;">
+    <button type="button" class="btn btn-light btn-rounded" style="margin-top: 10px; width: 200px;">
       <h4 class="title" style="text-align: center;"><a [routerLink]="['/communities/messages', community.topic]" >{{ community.topic }}</a></h4>
-    </div>
+    </button>
+      
   </div>
   </div>
   </div>
             
-  <!--button
-  mat-button
-  color= black
-  style="background-color: black;"
-  *ngFor="let community of communityService.communities | async"
-  [routerLink]="['/communities/messages', community.topic]"
->
-<div class="col-md-6 col-lg-4 wow bounceInUp" data-aos="zoom-in" data-aos-delay="100">
-  <div class="box">
-    <div class="icon" style="background: #fceef3;"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
-    <h4 class="title"><a [routerLink]="['/communities/messages', community.topic]" >{{ community.topic }}</a></h4>
-  </div>
-</div>
-  </button-->
+
 </section>
 <!-- ======= Footer ======= -->
 <footer id="footer" class="section-bg">

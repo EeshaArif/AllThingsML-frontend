@@ -4,7 +4,7 @@
   <p>Name: {{ competition.name }}</p>
   <p>Description: {{ competition.description }}</p>
   <p>Start: {{ competition.start_date }} End: {{ competition.end_date }}</p>
-  <img [src]="competition.image" />
+  <img [src]="competition.image" height=100px width=100px />
   <p>Prize: PKR {{ competition.prize }}</p>
   <p>Host: {{ competition.host }}</p>
   Link To Competition: <a [href]="competition.link">{{ competition.link }}</a

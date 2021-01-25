@@ -1,17 +1,3 @@
-<!--
-<section id="hero" class="clearfix">
-<p>communities-messages works!</p>
-<p>The messages of community {{ topic }}</p>
-<ul>
-  <li *ngFor="let message of messageService.messages | async">
-    {{ message.c_id }} {{ message.text }} <br />by {{ message.owner }}<br />{{
-      message.created_at
-    }}
-  </li>
-</ul>
-</section>
--->
-
 <section id="testimonials" class="testimonials" style="padding-top: 140px">
   <div class="container" data-aos="zoom-in">
     <header class="section-header">
@@ -64,7 +50,7 @@
           <button
             [disabled]="!form.valid"
             (click)="post()"
-            mat-button
+            mat-stroked-button
             color="primary"
           >
             Send Message

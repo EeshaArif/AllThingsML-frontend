@@ -1,3 +1,4 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { QuestionResponse } from './../_models/questionModel';
 import { Observable, Subject } from 'rxjs';
 import { environment } from './../../environments/environment';
@@ -13,7 +14,7 @@ export class QuestionService {
   private questionStore: Question[] = [];
   private questionSubject: Subject<Question[]> = new Subject();
   questions: Observable<Question[]> = this.questionSubject.asObservable();
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private sb: MatSnackBar) {}
 
   getAllQuestions(): void {
     this.http
@@ -39,6 +40,9 @@ export class QuestionService {
           (obj) => obj.q_id !== res.questions_list[0].q_id
         );
         this.questionSubject.next(this.questionStore);
+        this.sb.open('successfully deleted question!!', 'close', {
+          duration: 2000,
+        });
       });
   }
   postQuestion(question: Question): void {
@@ -46,6 +50,9 @@ export class QuestionService {
       .post<QuestionResponse>(`${this.BASE_URL}`, question)
       .subscribe((res) => {
         this.getAllQuestions();
+        this.sb.open('successfully posted question!!', 'close', {
+          duration: 2000,
+        });
       });
   }
 }

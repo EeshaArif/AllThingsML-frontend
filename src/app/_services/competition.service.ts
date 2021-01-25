@@ -1,3 +1,4 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subject, Observable } from 'rxjs';
 import {
   Competition,
@@ -18,7 +19,7 @@ export class CompetitionService {
     Competition[]
   > = this.competitionSubject.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private sb: MatSnackBar) {}
   getAllCompetitions(): void {
     this.http
       .get<CompetitionResponse>(`${this.BASE_URL}`)
@@ -44,6 +45,9 @@ export class CompetitionService {
           (obj) => obj.id !== res.competitions_list[0].id
         );
         this.competitionSubject.next(this.competitionStore);
+        this.sb.open('successfully deleted competition!!', 'close', {
+          duration: 2000,
+        });
       });
   }
   postCompetition(competition: Competition): void {
@@ -51,6 +55,9 @@ export class CompetitionService {
       .post<CompetitionResponse>(`${this.BASE_URL}`, competition)
       .subscribe((res) => {
         this.getAllCompetitions();
+        this.sb.open('successfully posted competition!!', 'close', {
+          duration: 2000,
+        });
       });
   }
   updateCompetition(competition: Competition): void {
@@ -58,6 +65,9 @@ export class CompetitionService {
       .put<CompetitionResponse>(`${this.BASE_URL}`, competition)
       .subscribe((res) => {
         this.getAllCompetitions();
+        this.sb.open('successfully updated!!', 'close', {
+          duration: 2000,
+        });
       });
   }
 }

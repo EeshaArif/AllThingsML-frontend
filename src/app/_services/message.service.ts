@@ -1,3 +1,4 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MessageResponse, Message } from './../_models/messageModel';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
@@ -13,7 +14,7 @@ export class MessageService {
   private MessageSubject: Subject<Message[]> = new Subject();
   messages: Observable<Message[]> = this.MessageSubject.asObservable();
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private sb: MatSnackBar) {
     // this.getAllMessages();
   }
   getAllMessages(): void {
@@ -43,6 +44,9 @@ export class MessageService {
       .subscribe((res: MessageResponse) => {
         this.MessagesStore.push(res.messages_list[0]);
         this.MessageSubject.next(this.MessagesStore);
+        this.sb.open('successfully posted message!!', 'close', {
+          duration: 2000,
+        });
       });
   }
 }

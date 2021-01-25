@@ -1,0 +1,137 @@
+<h1 class="mat-typography" mat-dialog-title>Add Course!</h1>
+<mat-dialog-content [formGroup]="form">
+    <mat-form-field>
+        <mat-label>Course Name:</mat-label>
+        <input
+          matInput
+          placeholder="What is the name of the course?"
+          formControlName="course_name"
+          required
+        />
+      </mat-form-field>
+      <br />
+  <mat-form-field>
+    <mat-label>Course Description:</mat-label>
+    <textarea
+      matInput
+      placeholder="Enter your course description"
+      formControlName="course_description"
+      required
+    ></textarea>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Image:</mat-label>
+    <input
+    matInput
+      placeholder="Please Enter URL of image"
+      formControlName="image"
+      type="file"
+      required
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Rating:</mat-label>
+    <mat-select formControlName="rating">
+      <mat-option value="1">1</mat-option>
+      <mat-option value="2">2</mat-option>
+      <mat-option value="3">3</mat-option>
+      <mat-option value="4">4</mat-option>
+      <mat-option value="5">5</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Instructor:</mat-label>
+    <input
+      matInput
+      placeholder="Who is the instructor?"
+      formControlName="instructor"
+      required
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Link:</mat-label>
+    <input
+      matInput
+      placeholder="Please enter the link to the competition"
+      formControlName="link"
+      required
+    />
+  </mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button
+    [disabled]="!form.valid"
+    class="mat-raised-button mat-primary"
+    (click)="save()"
+  >
+    Add Course
+  </button>
+</mat-dialog-actions>
+
+
+<!--
+<h1 mat-dialog-title>Add Photo</h1>
+<mat-dialog-content [formGroup]="form">
+  <mat-form-field>
+    <mat-label>Task Description:</mat-label>
+    <textarea
+      matInput
+      placeholder="Enter your task"
+      formControlName="description"
+      required
+    ></textarea>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Start Date:</mat-label>
+    <input
+      matInput
+      placeholder="[yyyy-mm-dd]"
+      formControlName="start_date"
+      required
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Due Date:</mat-label>
+    <input
+      matInput
+      placeholder="[yyyy-mm-dd]"
+      formControlName="end_date"
+      required
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Priority</mat-label>
+    <mat-select formControlName="priority">
+      <mat-option value="Low">Low</mat-option>
+      <mat-option value="Medium">Medium</mat-option>
+      <mat-option value="High">High</mat-option>
+    </mat-select>
+  </mat-form-field> 
+  <br />
+  <mat-form-field>
+    <mat-label>Status</mat-label>
+    <mat-select formControlName="status">
+      <mat-option value="To Do">To Do</mat-option>
+      <mat-option value="Doing">Doing</mat-option>
+      <mat-option value="Done">Done</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button
+    [disabled]="!form.valid"
+    class="mat-raised-button mat-primary"
+    (click)="save()"
+  >
+    Save
+  </button>
+</mat-dialog-actions>
+-->

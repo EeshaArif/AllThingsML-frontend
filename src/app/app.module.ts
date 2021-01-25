@@ -13,6 +13,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 import { LoadingDialogComponent } from './_helpers/loading-dialog/loading-dialog.component';
 import { NavComponent } from './nav/nav.component';
@@ -47,6 +53,7 @@ import { CompetitionService } from './_services/competition.service';
 import { CourseService } from './_services/course.service';
 import { QuestionService } from './_services/question.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CourseDialogComponent } from './course-dialog/course-dialog.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +81,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DatasetsComponent,
     OpenedArticleComponent,
     CommunitiesMessagesComponent,
+    CourseDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,13 +89,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     HttpClientModule,
     MatProgressSpinnerModule,
-    MatDialogModule,
     MatSnackBarModule,
     MatToolbarModule,
     MatButtonModule,
     MatExpansionModule,
     FormsModule,
+    MatSelectModule,
+    MatListModule,
+    MatIconModule,
     ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDialogModule,
+
   ],
   providers: [
     LoadingDialogService,
@@ -108,6 +122,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DatePipe,
   ],
   bootstrap: [AppComponent],
-  entryComponents: [LoadingDialogComponent],
+  entryComponents: [LoadingDialogComponent, CourseDialogComponent],
 })
 export class AppModule {}

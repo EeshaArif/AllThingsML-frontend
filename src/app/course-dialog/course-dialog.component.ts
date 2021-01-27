@@ -38,9 +38,7 @@ export class CourseDialogComponent implements OnInit {
   onFileChanged(event: any) {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
-
       reader.readAsDataURL(event.target.files[0]); // read file as data url
-
       reader.onload = (event) => {
         // called once readAsDataURL is completed
         if (event.target !== null) {

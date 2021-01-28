@@ -1,5 +1,6 @@
 <!--section class="clearfix" style="padding: 120px;"-->
-  <section id="services" class="services section-bg" style="padding-top: 170px;">
+<section id="services" class="services section-bg" style="padding-top: 170px">
+  
     <div class="container" data-aos="fade-up">
 
       <header class="section-header">
@@ -9,25 +10,26 @@
       <div class="row" >
 
         <div class=" wow bounceInUp" data-aos="zoom-in" data-aos-delay="100">
-          <div class=" wow bounceInUp" id="post-8723"> 
+          <!--div class=" wow bounceInUp" id="post-8723"--> 
 
             <div class="box" style="width: 200" *ngFor="let competition of competitionService.competitions | async">
             
             <!--POST THUMBNAIL START-->
-                    <div class=" wow bounceInUp" style="float: left;">
-                         <!--CALL TO POST IMAGE-->   
-                         <img [src]="competition.image" height=100px width= 100px alt="" class="img-fluid" >
-                        </div>
+                    <!--div class=" wow bounceInUp" style="float: left; min-width: 10%;">
+                         <CALL TO POST IMAGE>   
+                         
+                        </div-->
                         <!--POST THUMBNAIL END-->
            
                            <!--POST CONTENT START-->
                                <div class="post_content">
+                                <img [src]="competition.image" height=100px width= 100px alt="" class="img-fluid" style="float: left; max-width: 10%;">
            
                                  <button
            
-                                 style=" background-color: transparent;"
+                                 style=" background-color: transparent; border: none;"
                
-                                 mat-button
+                                 
                                  color="primary"
                                >
                                <a class="title" [href]="competition.link">{{ competition.name }}</a>
@@ -50,7 +52,7 @@
           
                     </div>
                     </div>
-      </div>
+      
     </div>
     <form>
     <div style="margin-bottom: 5px; margin-left: 50px; margin-right: 50px;">
